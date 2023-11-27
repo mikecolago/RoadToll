@@ -1,0 +1,35 @@
+﻿@page
+@model RoadToll.Pages.CarPage.AddModel
+@{
+}
+
+<form method="post">
+    <h3>Add Car</h3>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="CarViewModel.RegistrationNumber" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Model</label>
+        <input type="text" class="form-control" asp-for="CarViewModel.Model" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Color</label>
+        <input type="text" class="form-control" asp-for="CarViewModel.Color" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.Year" asp-items="Model.CarViewModel.YearOptions">
+            <option selected="selected" value="">Select</option>
+        </select>
+    </div>    
+    <div class="mb-3">
+        <label class="form-label">Vehicle Type</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.VehicleType" asp-items="Html.GetEnumSelectList<Models.VehicleType>()">
+            <option selected="selected" value="">Select</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

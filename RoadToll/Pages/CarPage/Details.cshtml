@@ -1,0 +1,37 @@
+﻿@page "{id:int}"
+@model DetailsModel
+@{
+}
+<h3>Car Details</h3>
+<table>
+    <tr>
+        <th>Registration Number</th>
+        <th>Model</th>
+        <th>Vehicle Type</th>
+        <th>Passages</th>
+    </tr>
+    <tr>
+        <td>
+            @Model.CarViewModel.RegistrationNumber
+        </td>
+    </tr>
+</table>
+<dl>
+    <dt>Registration Number: </dt>
+    <dd>@Model.CarViewModel.RegistrationNumber</dd>
+    <dt>Model</dt>
+    <dd>@Model.CarViewModel.Model</dd>
+    <dt>Vehicle Type</dt>
+    <dd>@Model.CarViewModel.VehicleType</dd>
+    <dt>Passages</dt>    
+    <dd>
+        @if (Model.CarViewModel.Passages != null)
+        {
+            @Model.CarViewModel.Passages.Count
+        }
+        else
+        {
+            <label>0</label>
+        }
+    </dd>
+</dl>
