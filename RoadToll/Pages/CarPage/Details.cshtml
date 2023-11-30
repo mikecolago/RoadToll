@@ -35,3 +35,23 @@
         }
     </dd>
 </dl>
+<h3>Passages Details</h3>
+<table class ="table table-sm">
+    <tr>
+        <th>Date</th>
+        <th>Camera</th>
+    </tr>
+    @foreach (var item in @Model.CarViewModel.Passages)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item)<br />
+            </th>
+        </tr>
+    }
+</table>
+<form method="post">
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete" asp-route-id="@Model.CarViewModel.Id">
+        Delete
+    </button>
+</form>

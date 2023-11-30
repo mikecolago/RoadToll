@@ -1,19 +1,20 @@
 ﻿@page
-@model RoadToll.Pages.CarPage.AddModel
+@model RoadToll.Pages.CarPage.UpdateModel
 @{
     var message = ViewData["Message"]?.ToString();
 }
 
 <form method="post">
-    <h3>Add Car</h3>
+    <h3>Edit Car</h3>
     @if (!string.IsNullOrWhiteSpace(message))
     {
         <div class="alert alert-success" role="alert">
             @message
         </div>
     }
+    <input type="hidden" class="form-control" asp-for="CarViewModel.Id" />
     <div class="mb-3">
-        <label class="form-label">Name</label>
+        <label class="form-label">Registration Number</label>
         <input type="text" class="form-control" asp-for="CarViewModel.RegistrationNumber" />
     </div>
     <div class="mb-3">
@@ -29,7 +30,7 @@
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.Year" asp-items="Model.CarViewModel.YearOptions">
             <option selected="selected" value="">Select</option>
         </select>
-    </div>    
+    </div>
     <div class="mb-3">
         <label class="form-label">Vehicle Type</label>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.VehicleType" asp-items="Html.GetEnumSelectList<Models.VehicleType>()">

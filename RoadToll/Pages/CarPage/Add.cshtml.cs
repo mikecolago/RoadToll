@@ -25,12 +25,13 @@ namespace RoadToll.Pages.CarPage
             var carModel = new CarViewModel
             {
                 RegistrationNumber = CarViewModel.RegistrationNumber,
-                VehicleType = CarViewModel.VehicleType
+                VehicleType = CarViewModel.VehicleType,
+                Color = CarViewModel.Color,
+                Model = CarViewModel.Model,
+                Year = CarViewModel.Year,                
             };
-            string jsonString2 = System.IO.File.ReadAllText("./Data/Cars.json");
-            List<CarViewModel> jsonCars = JsonConvert.DeserializeObject<List<CarViewModel>>(jsonString2);
-            
-
+            string jsonCarsData = System.IO.File.ReadAllText("./Data/Cars.json");
+            List<CarViewModel> jsonCars = JsonConvert.DeserializeObject<List<CarViewModel>>(jsonCarsData);            
             jsonCars.Add(carModel);
             string jsonString = JsonConvert.SerializeObject(jsonCars);
             System.IO.File.WriteAllText("./Data/Cars.json", jsonString);

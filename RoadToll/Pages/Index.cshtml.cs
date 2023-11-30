@@ -9,17 +9,20 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Runtime.ConstrainedExecution;
+using RoadToll.Services;
 
 namespace RoadToll.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly CarService _carService;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, CarService carService)
         {
             _logger = logger;
-        }
+            _carService = carService;
+        }        
 
         public void OnGet()
         {
@@ -48,12 +51,10 @@ namespace RoadToll.Pages
             Car jsonCar = JsonConvert.DeserializeObject<Car>(jsonString);
             //File.WriteAllText("Cars.json", jsonString);
         }
-        public List<Car> GetAllCars()
+        
+        public async Task<List<Car>> GetAllCarsAsync()
         {
-            string jsonString2 = System.IO.File.ReadAllText("./Data/Cars.json");
-            List<Car> jsonCars = JsonConvert.DeserializeObject<List<Car>>(jsonString2);
-            
-            return jsonCars;
+            return await _carService.GetAllCars();            
         }
         public void SaveCar()
         {

@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using RoadToll.Data;
+using RoadToll.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<CarService>();
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
