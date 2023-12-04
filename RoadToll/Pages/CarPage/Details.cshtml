@@ -3,19 +3,7 @@
 @{
 }
 <h3>Car Details</h3>
-<table>
-    <tr>
-        <th>Registration Number</th>
-        <th>Model</th>
-        <th>Vehicle Type</th>
-        <th>Passages</th>
-    </tr>
-    <tr>
-        <td>
-            @Model.CarViewModel.RegistrationNumber
-        </td>
-    </tr>
-</table>
+
 <dl>
     <dt>Registration Number: </dt>
     <dd>@Model.CarViewModel.RegistrationNumber</dd>
@@ -23,6 +11,8 @@
     <dd>@Model.CarViewModel.Model</dd>
     <dt>Vehicle Type</dt>
     <dd>@Model.CarViewModel.VehicleType</dd>
+    <dt>Total toll</dt>
+    <dd>@Model.CarViewModel.TotalToll</dd>
     <dt>Passages</dt>    
     <dd>
         @if (Model.CarViewModel.Passages != null)
@@ -41,13 +31,16 @@
         <th>Date</th>
         <th>Camera</th>
     </tr>
-    @foreach (var item in @Model.CarViewModel.Passages)
+    @if (@Model.CarViewModel.Passages != null)
     {
-        <tr>
-            <th>
-                @Html.DisplayFor(modelItem => item)<br />
-            </th>
-        </tr>
+        @foreach (var item in @Model.CarViewModel.Passages)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item)<br />
+                </th>
+            </tr>
+        }        
     }
 </table>
 <form method="post">

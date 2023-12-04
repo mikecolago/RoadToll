@@ -13,25 +13,25 @@
         </div>
     }
     <div class="mb-3">
-        <label class="form-label">Name</label>
+        <label asp-for="CarViewModel.RegistrationNumber" class="form-label"></label>
         <input type="text" class="form-control" asp-for="CarViewModel.RegistrationNumber" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Model</label>
+        <label asp-for="CarViewModel.Model" class=" form-label"></label>
         <input type="text" class="form-control" asp-for="CarViewModel.Model" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Color</label>
+        <label asp-for="CarViewModel.Color" class=" form-label">Color</label>
         <input type="text" class="form-control" asp-for="CarViewModel.Color" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Year</label>
+        <label asp-for="CarViewModel.Year" class=" form-label">Year</label>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.Year" asp-items="Model.CarViewModel.YearOptions">
             <option selected="selected" value="">Select</option>
         </select>
     </div>    
     <div class="mb-3">
-        <label class="form-label">Vehicle Type</label>
+        <label asp-for="CarViewModel.VehicleType" class=" form-label">Vehicle Type</label>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="CarViewModel.VehicleType" asp-items="Html.GetEnumSelectList<Models.VehicleType>()">
             <option selected="selected" value="">Select</option>
         </select>

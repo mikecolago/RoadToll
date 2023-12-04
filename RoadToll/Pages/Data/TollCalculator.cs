@@ -111,11 +111,11 @@ public class TollCalculator
     {
         List<Car> cars = new List<Car>()
         {
-            new Car() { RegistrationNumber = "ABC 123", Color = "Silver", Year = 2017, Model = "Volvo S/V60", Passages = new List<DateTime>(){ new DateTime(2021, 11, 15, 8, 30, 0) } },
-            new Car() { RegistrationNumber = "DEF 456", Color = "Black", Year = 2018, Model = "Volvo XC60", Passages = new List<DateTime>() },
-            new Car() { RegistrationNumber = "GHI 789", Color = "Red", Year = 2019, Model = "Volvo XC40", Passages = new List<DateTime>() },
-            new Car() { RegistrationNumber = "JKL 012", Color = "White", Year = 2016, Model = "VW Golf", Passages = new List<DateTime>() },
-            new Car() { RegistrationNumber = "MNO 345", Color = "Gray", Year = 2015, Model = "VW Passat", Passages = new List<DateTime>() }
+            new Car() { RegistrationNumber = "ABC123", Color = "Silver", Year = 2017, Model = "Volvo S/V60", Passages = new List<Passage>() { new Passage(){ Time = new DateTime(2021, 11, 15, 8, 30, 0) } } },
+            new Car() { RegistrationNumber = "DEF456", Color = "Black", Year = 2018, Model = "Volvo XC60", Passages = new List<Passage>() { new Passage(){ Time = new DateTime(2021, 11, 15, 8, 30, 0) } } },
+            new Car() { RegistrationNumber = "GHI789", Color = "Red", Year = 2019, Model = "Volvo XC40", Passages = new List<Passage>() { new Passage(){ Time = new DateTime(2021, 11, 15, 8, 30, 0) } } },
+            new Car() { RegistrationNumber = "JKL012", Color = "White", Year = 2016, Model = "VW Golf", Passages = new List<Passage>() { new Passage(){ Time = new DateTime(2021, 11, 15, 8, 30, 0) } } },
+            new Car() { RegistrationNumber = "MNO345", Color = "Gray", Year = 2015, Model = "VW Passat", Passages = new List<Passage>() { new Passage(){ Time = new DateTime(2021, 11, 15, 8, 30, 0) } } }
 
         };        
         return cars;

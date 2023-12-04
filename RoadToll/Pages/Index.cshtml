@@ -14,27 +14,39 @@
         <th>Vehicle Type</th>
         <th>Passages</th>    
     </tr>
-    
-    @foreach (var item in cars)
+    @if (cars.Count > 0)
+    {
+        @foreach (var item in cars)
+        {
+            <tr>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-route-id="@item.Id" asp-page="/CarPage/Details">@Html.DisplayFor(modelItem => item.RegistrationNumber)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleType)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passages.Count)<br />
+                </td>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-route-id="@item.Id" asp-page="/CarPage/Details">Details</a>
+                    <a class="nav-link text-dark" asp-area="" asp-route-id="@item.Id" asp-page="/CarPage/Update">Update</a>
+                </td>
+
+            </tr>
+        }
+
+    }
+    else
     {
         <tr>
-            <td>                
-                <a class="nav-link text-dark" asp-area="" asp-route-id="@item.Id" asp-page="/CarPage/Details">@Html.DisplayFor(modelItem => item.RegistrationNumber)</a>                
-            </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Model)<br />
+                empty
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VehicleType)<br />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Passages.Count)<br />
-            </td>
-            <td>
-                <a class="nav-link text-dark" asp-area="" asp-route-id="@item.Id" asp-page="/CarPage/Update">Update</a>                
-            </td>
-
-
         </tr>
     }
+
 </table>

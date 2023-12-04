@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoadToll.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace RoadToll.Models
     {
         public string GetVehicleType()
         {
-            return "Car";
+            return VehicleType.ToString();
         }
         public string GetVehicleName()
         {
@@ -22,7 +23,7 @@ namespace RoadToll.Models
         public string Model {  get; set; }
         public string Color { get; set; }
         public int Year { get; set; }
-        public List<DateTime> Passages { get; set; }
+        public List<Passage> Passages { get; set; }
         public VehicleType VehicleType { get; set; }
     }
 }

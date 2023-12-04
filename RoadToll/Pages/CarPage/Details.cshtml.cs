@@ -27,6 +27,7 @@ namespace RoadToll.Pages.CarPage
             CarViewModel.Model = currentCar.Model;
             CarViewModel.VehicleType = currentCar.VehicleType;
             CarViewModel.Passages = currentCar.Passages;
+            CarViewModel.TotalToll = _carService.GetPrice(currentCar);
         }
 
         public IActionResult OnPostDelete(int id)

@@ -1,4 +1,5 @@
-﻿using TollFeeCalculator;
+﻿using RoadToll.Models;
+using TollFeeCalculator;
 
 namespace RoadToll.Models.ViewModels
 {
@@ -17,8 +18,9 @@ namespace RoadToll.Models.ViewModels
         public string Model { get; set; } = "N/A";
         public string Color { get; set; } = "N/A";
         public int Year { get; set; }
-        public List<DateTime> Passages { get; set; }
+        public List<Passage> Passages { get; set; }
         public VehicleType VehicleType { get; set; } = VehicleType.Unknown;
+        public int TotalToll { get; set; }
         
     }
 }

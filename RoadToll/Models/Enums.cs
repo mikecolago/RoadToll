@@ -12,4 +12,9 @@
         Truck = 7,
         Unknown = 99
     }
+    public enum PaymentStatus
+    {
+        Completed,
+        Pending,
+    }
 }
